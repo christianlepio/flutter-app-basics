@@ -12,102 +12,102 @@ void main() {
 }
 
 //control statement
-void test() {
-  final name = 'foo';
+// void test() {
+//   final name = 'foo';
 
-  if (name == 'foo') {
-    print('yes this is foo!');
-  } else {
-    print('No, this is not foo!');
-  }
-}
+//   if (name == 'foo') {
+//     print('yes this is foo!');
+//   } else {
+//     print('No, this is not foo!');
+//   }
+// }
 
 // operators
-void testOperators() {
-  const age = 20;
-  const halfOfAge = age / 2;
-  const doubleTheAge = age * 2;
+// void testOperators() {
+//   const age = 20;
+//   const halfOfAge = age / 2;
+//   const doubleTheAge = age * 2;
 
-  print('Age: $age');
-  print('Half Of Age: $halfOfAge');
-  print('doubleTheAge: $doubleTheAge');
-}
+//   print('Age: $age');
+//   print('Half Of Age: $halfOfAge');
+//   print('doubleTheAge: $doubleTheAge');
+// }
 
 // list in Dart
-void dartList() {
-  var names = ['foo', 'bar', 'baz'];
-  final foo = names[0];
+// void dartList() {
+//   var names = ['foo', 'bar', 'baz'];
+//   final foo = names[0];
 
-  print(foo);
-  print(names.length);
-  names.add('Ryan');
-  print('names length: ${names.length} , names: $names');
-}
+//   print(foo);
+//   print(names.length);
+//   names.add('Ryan');
+//   print('names length: ${names.length} , names: $names');
+// }
 
 // dart map
-void dartMap() {
-  var person = { 
-    'age': 20,
-    'name': 'foo'
-  };
+// void dartMap() {
+//   var person = { 
+//     'age': 20,
+//     'name': 'foo'
+//   };
 
-  print(person);
-  person['lastname'] = 'Leps'; // adding new key
-  print(person);
-}
+//   print(person);
+//   person['lastname'] = 'Leps'; // adding new key
+//   print(person);
+// }
 
 // dart null
-void dartNull() {
-  List<String?>? names = ['foo', 'Bar', null];
-  names = null;
-  print(names);
-}
+// void dartNull() {
+//   List<String?>? names = ['foo', 'Bar', null];
+//   names = null;
+//   print(names);
+// }
 
 // future function in dart
-Future<int> heavyFutureThatMultipliesByTwo(int a) {
-  return Future.delayed(const Duration(seconds: 3), () {
-    return a * 2;
-  });
-}
+// Future<int> heavyFutureThatMultipliesByTwo(int a) {
+//   return Future.delayed(const Duration(seconds: 3), () {
+//     return a * 2;
+//   });
+// }
 
 // streams - an async 'pipe' of data
-Stream<String> getName() {
-  return Stream.periodic(const Duration(seconds: 1), (value) {
-    return 'Rayan';
-  });
-}
+// Stream<String> getName() {
+//   return Stream.periodic(const Duration(seconds: 1), (value) {
+//     return 'Rayan';
+//   });
+// }
 
 // generators - for generating 'iterables', marked with sync* and async*
-Iterable<int> getOneTwoThree() sync* {
-  yield 1;
-  yield 2;
-  yield 3;
-}
+// Iterable<int> getOneTwoThree() sync* {
+//   yield 1;
+//   yield 2;
+//   yield 3;
+// }
 
 // generics - to avoid re-writing similar code 
-class Pair<A, B> {
-  final A value1;
-  final B value2;
+// class Pair<A, B> {
+//   final A value1;
+//   final B value2;
 
-  Pair(this.value1, this.value2);
-}
+//   Pair(this.value1, this.value2);
+// }
 
 // test future/stream in dart
-void testFuture() async {
-  // generics
-  final names = Pair('ry', 20);
+// void testFuture() async {
+//   // generics
+//   final names = Pair('ry', 20);
 
-  final result = await heavyFutureThatMultipliesByTwo(10);
-  print('Future result: $result');
+//   final result = await heavyFutureThatMultipliesByTwo(10);
+//   print('Future result: $result');
 
-  for (final value in getOneTwoThree()) {
-    print(value);
-  }
+//   for (final value in getOneTwoThree()) {
+//     print(value);
+//   }
 
-  await for (final value in getName()) { 
-    print('value in stream: $value');
-  }
-}
+//   await for (final value in getName()) { 
+//     print('value in stream: $value');
+//   }
+// }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -116,11 +116,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // print(getFullName('Ryan', 'Leps'));
-    test();
-    testOperators();
-    dartList();
-    dartMap();
-    testFuture();
+    // test();
+    // testOperators();
+    // dartList();
+    // dartMap();
+    // testFuture();
 
     return MaterialApp(
       title: 'Flutter Demo',
