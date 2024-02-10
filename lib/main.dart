@@ -44,6 +44,71 @@ void dartList() {
   print('names length: ${names.length} , names: $names');
 }
 
+// dart map
+void dartMap() {
+  var person = { 
+    'age': 20,
+    'name': 'foo'
+  };
+
+  print(person);
+  person['lastname'] = 'Leps'; // adding new key
+  print(person);
+}
+
+// dart null
+void dartNull() {
+  List<String?>? names = ['foo', 'Bar', null];
+  names = null;
+  print(names);
+}
+
+// future function in dart
+Future<int> heavyFutureThatMultipliesByTwo(int a) {
+  return Future.delayed(const Duration(seconds: 3), () {
+    return a * 2;
+  });
+}
+
+// streams - an async 'pipe' of data
+Stream<String> getName() {
+  return Stream.periodic(const Duration(seconds: 1), (value) {
+    return 'Rayan';
+  });
+}
+
+// generators - for generating 'iterables', marked with sync* and async*
+Iterable<int> getOneTwoThree() sync* {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+// generics - to avoid re-writing similar code 
+class Pair<A, B> {
+  final A value1;
+  final B value2;
+
+  Pair(this.value1, this.value2);
+}
+
+// test future/stream in dart
+void testFuture() async {
+  // generics
+  final names = Pair('ry', 20);
+
+  final result = await heavyFutureThatMultipliesByTwo(10);
+  print('Future result: $result');
+
+  for (final value in getOneTwoThree()) {
+    print(value);
+  }
+
+  await for (final value in getName()) { 
+    print('value in stream: $value');
+  }
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -54,6 +119,8 @@ class MyApp extends StatelessWidget {
     test();
     testOperators();
     dartList();
+    dartMap();
+    testFuture();
 
     return MaterialApp(
       title: 'Flutter Demo',
